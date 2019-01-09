@@ -94,7 +94,7 @@
 
 				<tr>
 					<td>支払い方法</td>
-					<td><s:property value="session.stock"/></td>
+					<td><s:property value="session.pay"/></td>
 				</tr>
 
 				<tr>

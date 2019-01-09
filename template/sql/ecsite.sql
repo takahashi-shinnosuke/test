@@ -15,6 +15,7 @@ create table login_user_transaction(
 	insert_date datetime,
 	updated_date datetime
 	);
+
 drop table if exists item_info_transaction;
 
 create table item_info_transaction(
