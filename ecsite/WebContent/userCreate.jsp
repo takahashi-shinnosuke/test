@@ -75,9 +75,8 @@
 		<div>
 			<s:if test ="errorMassage !=''">
 				<s:property value ="errorMassage" escape="false"/>
-					<s:textfield name="loginUseId"/>
 				</s:if>
-		
+
 		<table>
 			<s:form action="UserCreateConfirmAction">
 
@@ -90,7 +89,7 @@
 							<input type ="text" name ="loginUserId" value=""/>
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td>
 							<label>ログインPASS:</label>
@@ -100,7 +99,7 @@
 							<input type ="text" name ="loginPassword" value=""/>
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td>
 							<label>ユーザー名:</label>
@@ -110,10 +109,10 @@
 							<input type ="text" name ="userName" value=""/>
 						</td>
 					</tr>
-					
+
 					<s:submit value ="登録"/>
-					
-				
+
+
 			</s:form>
 			</table>
 
