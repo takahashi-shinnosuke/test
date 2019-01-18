@@ -74,7 +74,7 @@
 
 		<div>
 			<h3>登録する内容は以下でよろしいですか。</h3>
-		
+
 		<table>
 			<s:form action="UserCreateCompleteAction">
 
@@ -87,7 +87,7 @@
 							<s:property value ="loginUserId" escape="false"/>
 						</td>
 					</tr>
-					
+
 					<tr id="box">
 						<td>
 							<label>ログインPASS:</label>
@@ -97,7 +97,7 @@
 							<s:property value ="loginPassword" escape="false"/>
 						</td>
 					</tr>
-					
+
 					<tr id="box">
 						<td>
 							<label>ユーザー名:</label>
@@ -107,13 +107,13 @@
 							<s:property value ="userName" escape="false"/>
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td>
 							<s:submit value ="完了"/>
 						</td>
 					</tr>
-				
+
 			</s:form>
 			</table>
 

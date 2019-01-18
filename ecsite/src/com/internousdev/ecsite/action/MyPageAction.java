@@ -13,13 +13,18 @@ import com.opensymphony.xwork2.ActionSupport;
 public class MyPageAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> session;
-	public String result;
-	public String deleteFlg;
-	MyPageDAO myPageDAO = new MyPageDAO();
-	ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	private String result;
+	private MyPageDAO myPageDAO = new MyPageDAO();
+	private ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
+	private String deleteFlg;
+	private String message;
+
 
 	public String execute() throws SQLException{
 
+		if(!session.containsKey("id")){
+			return ERROR;
+		}
 
 
 		if(deleteFlg == null){
@@ -41,7 +46,6 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	public void delete() throws SQLException{
 
-		    MyPageDAO myPageDAO = new MyPageDAO();
 
 			String item_transaction_id = session.get("id").toString();
 			String user_master_id =session.get("login_user_id").toString();
@@ -49,10 +53,11 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
 
 			if(res>0){
-				session.put("message","商品情報を正しく削除しました。");
+				myPageList = null ;
+				setMessage("商品情報を正しく削除しました。");
 
 			}else if(res==0){
-				session.put("message","商品情報の削除に失敗しました。");
+				setMessage("商品情報の削除に失敗しました。");
 			}
         }
 
@@ -64,6 +69,18 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	public void setDeleteFlg(String deleteFlg){
 			this.deleteFlg =deleteFlg;
+	}
+
+	public ArrayList<MyPageDTO> getMyPageList(){
+		return myPageList;
+	}
+
+	public String getMessage(){
+		return message;
+	}
+
+	public void setMessage(String message){
+		this.message = message ;
 	}
 
 	@Override

@@ -10,6 +10,7 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
+	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 	<title>BuyItem画面</title>
 
@@ -57,12 +58,12 @@
 			}
 
 	</style>
-	
+
 	<script type ="text/javascript">
 			function submitAction(url){
-				
+
 				$('form').attr('action',url);
-				$('form').sunmit();
+				$('form').submit();
 			}
 	</script>
 
@@ -82,7 +83,7 @@
 
 		<div>
 			<s:form action="BuyItemConfirmAction">
-			
+
 				<table>
 					<tr>
 						<td>
@@ -111,7 +112,7 @@
 						</td>
 
 						<td>
-							<s:property value="session.stock"/>
+							<s:property value="session.count"/>
 							<span>個</span>
 						</td>
 					</tr>
@@ -122,21 +123,21 @@
 						</td>
 						<td>
 							<s:property value="session.pay"/>
-						
+
 						</td>
 					</tr>
-					
+
 					<tr>
 							<td><br></td>
 					</tr>
 
 					<tr>
-					
+
 					    <td>
 							<input type="button" value ="戻る"
 							 onclick="submitAction('HomeAction')"/>
 						</td>
-					
+
 						<td>
 							<input type="button" value ="完了"
 							 onclick="submitAction('BuyItemConfirmAction')"/>
@@ -145,7 +146,7 @@
 
 				</table>
 			</s:form>
-	
+
 		</div>
 	</div>
 
